@@ -3,8 +3,8 @@
 using namespace std;
 
 // trivial swap function
-void swap(int a, int b){
-	int temp = a;
+void swap(int *&a, int *&b){
+	int *temp = a;
 	a = b;
 	b = temp;
 	return;
@@ -26,7 +26,7 @@ vector <int> shift(vector <int> a){
 
 // perform a left rotation to all elements in the vector d times
 vector <int> leftRotation(vector <int> a, int d) {
-    for (int i=0; i<d; i++){
+    for (int i=1; i<d; i++){
     	a = shift(a);
     }
     return a;
